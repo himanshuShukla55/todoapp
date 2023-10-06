@@ -1,0 +1,10 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Cook Food",
+      "status": false,
+      "label": "daily-task"
+    }
+  ]
+}
