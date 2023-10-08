@@ -5,20 +5,21 @@ import Form from "../../Components/Form.component";
 
 const AddTodo = () => {
   const navigate = useNavigate();
-  const { todo, handleChange } = useContext(TodoContext);
+  const { todo, handleChange, clearTodo } = useContext(TodoContext);
   const { title, label } = todo;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await fetch("http://localhost:8080/todos", {
+      await fetch("https://todo-xbkz.onrender.com/todos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(todo),
       });
+      clearTodo();
       navigate("/dashboard");
     } catch (error) {
       console.error(error);

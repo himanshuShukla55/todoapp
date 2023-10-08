@@ -12,9 +12,19 @@ const TodoContextProvider = ({ children }) => {
   const handleTodoEdit = (title, label) => {
     setTodo({ ...todo, title, label });
   };
+  const clearTodo = () => {
+    setTodo({ title: "", label: "", status: false });
+  };
   return (
     <TodoContext.Provider
-      value={{ todo, idToEdit, setIdToEdit, handleChange, handleTodoEdit }}
+      value={{
+        todo,
+        idToEdit,
+        setIdToEdit,
+        handleChange,
+        handleTodoEdit,
+        clearTodo,
+      }}
     >
       {children}
     </TodoContext.Provider>

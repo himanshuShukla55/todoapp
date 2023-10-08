@@ -7,7 +7,7 @@ const Dashboard = () => {
 
   const getTodoList = async () => {
     try {
-      const res = await fetch("http://localhost:8080/todos");
+      const res = await fetch("https://todo-xbkz.onrender.com/todos");
       const data = await res.json();
       setTodoList(data);
     } catch (error) {
