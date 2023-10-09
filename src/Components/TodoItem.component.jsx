@@ -30,12 +30,14 @@ const TodoItem = ({
         />
       </label>
       {label && <h3 className="card-label">{label}</h3>}
-      <button className="edit-card-btn" onClick={handleEdit}>
-        Edit
-      </button>
-      <button className="delete-card-btn" onClick={() => handleDelete(id)}>
-        Delete
-      </button>
+      <div className="card-buttons">
+        <button className="edit-card-btn" onClick={handleEdit}>
+          ✎
+        </button>
+        <button className="delete-card-btn" onClick={() => handleDelete(id)}>
+          ⤬
+        </button>
+      </div>
     </div>
   );
 };

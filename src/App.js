@@ -1,22 +1,13 @@
-import { Link } from "react-router-dom";
 import "./App.css";
 import AllRoutes from "./Routes";
+import Navbar from "./Components/Navbar.component";
 
 function App() {
   return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Add Todo</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
-      </nav>
+    <div className="App">
+      <Navbar />
       <AllRoutes />
-    </>
+    </div>
   );
 }
 

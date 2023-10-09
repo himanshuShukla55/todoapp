@@ -24,11 +24,10 @@ const Form = ({
         <input
           type="text"
           name="label"
-          placeholder={labelPlaceholder}
+          placeholder={`${labelPlaceholder} (Optional)`}
           value={labelValue}
           onChange={handleChange}
         />
-        <span>(optional)</span>
       </label>
       <input type="submit" value={submitValue} />
     </form>
