@@ -17,10 +17,43 @@ const Dashboard = () => {
   useEffect(() => {
     getTodoList();
   }, []);
+  const handleDelete = async (id) => {
+    try {
+      await fetch(`https://todo-xbkz.onrender.com/todos/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const newTodoList = todoList.filter((item) => item.id !== id);
+      setTodoList(newTodoList);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const handleStatusChange = async (id, status) => {
+    try {
+      await fetch(`https://todo-xbkz.onrender.com/todos/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ status }),
+      });
+      getTodoList();
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div id="todo-list">
       {todoList.map((item) => (
-        <TodoItem key={item.id} item={item} />
+        <TodoItem
+          key={item.id}
+          item={item}
+          handleDelete={handleDelete}
+          handleStatusChange={handleStatusChange}
+        />
       ))}
     </div>
   );
