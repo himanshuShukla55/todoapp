@@ -2,7 +2,6 @@
 
 ## Description
 A todo app to keep track of tasks. Users can perform the following operations:
-- Login to the app using username and password
 - Create a todo 
 - Add a Label to a todo
 - Change the status of the todo from pending to done
